@@ -1,0 +1,4 @@
+2004-06-30  Kingpin  <mthurn@verizon.net>
+
+	* Auth.pm (send): do error-checking on addresses
+

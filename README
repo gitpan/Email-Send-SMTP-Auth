@@ -1,0 +1,5 @@
+README for Email::Send::SMTP::Auth
+
+This is a Mailer for use with the Email::Send module.
+
+Written by Martin Thurn (mthurn@cpan.org).
