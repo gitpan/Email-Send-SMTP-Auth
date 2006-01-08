@@ -1,0 +1,19 @@
+name: Email-Send-SMTP-Auth
+version: 1.011
+author: Martin Thurn <mthurn@cpan.org>
+license: perl
+distribution_type: module
+build_requires:
+  Data::Dumper: 0
+  Email::Abstract::EmailSimple: 0
+  Email::Send: 0
+  Email::Simple: 0
+  Module::Pluggable: 0
+requires:
+  perl: 5.004
+  Email::Address: 0
+  Net::SMTP_auth: 0
+no_index:
+  directory:
+    - inc
+generated_by: Module::Install version 0.48

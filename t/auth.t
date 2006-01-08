@@ -1,3 +1,6 @@
+
+# $Id: auth.t,v 1.10 2006/01/08 03:20:25 Daddy Exp $
+
 use ExtUtils::testlib;
 use Test::More no_plan;
 
@@ -66,13 +69,16 @@ It was sent at   $sDTG
   skip "No test email can be sent, because of missing environment variables.", 3 if $iSkip;
   diag(qq{Test email will be sent From: =$sFrom=});
   diag(qq{Test email will be sent   To: =$sTo=});
-  diag(qq{Test email will be sent   Cc: =$sCc=});
-  diag(qq{Test email will be sent  Bcc: =$sBcc=});
+  diag(qq{Test email will be sent   Cc: =$sCc=}) if ($sCc ne '');
+  diag(qq{Test email will be sent  Bcc: =$sBcc=}) if ($sBcc ne '');
   diag(qq{Test email will be sent  via: =$sSMTPserver=});
-  diag(qq{Test email was     sent   at: =$sDTG=});
-  ok $oMessage->header_set('From', $sFrom);
-  ok $oMessage->header_set('To', $sTo);
-  ok $oMessage->header_set('Cc', $sCc) if ($sCc ne '');
-  ok $oMessage->header_set('Bcc', $sBcc) if ($sBcc ne '');
-  ok send 'SMTP::Auth' => $oMessage, $sSMTPserver, $sUsername, $sPassword;
+  diag(qq{Test email sending        at: =$sDTG=});
+  ok($oMessage->header_set('From', $sFrom));
+  ok($oMessage->header_set('To', $sTo));
+  ok($oMessage->header_set('Cc', $sCc)) if ($sCc ne '');
+  ok($oMessage->header_set('Bcc', $sBcc)) if ($sBcc ne '');
+  ok(send 'SMTP::Auth' => $oMessage, $sSMTPserver, $sUsername, $sPassword);
   } # end of SKIP block
+
+__END__
+

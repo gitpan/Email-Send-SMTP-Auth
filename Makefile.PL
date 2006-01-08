@@ -1,4 +1,6 @@
 
+# $Id: Makefile.PL,v 1.7 2006/01/08 02:57:04 Daddy Exp $
+
 use inc::Module::Install;
 
 name('Email-Send-SMTP-Auth');
@@ -19,7 +21,7 @@ build_requires('Module::Pluggable');
 requires('Net::SMTP_auth');
 
 check_nmake();      # check and download nmake.exe for Win32
-&Makefile->write;
+&WriteAll;
 
 sub MY::postamble
   {
@@ -34,3 +36,4 @@ PART0
   } # MY::postamble
 
 __END__
+

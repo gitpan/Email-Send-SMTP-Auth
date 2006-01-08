@@ -1,0 +1,8 @@
+2006-01-07    <Daddy@C-3PO>
+
+	* Auth.pm (send): use Email::Send::SMTP for authentication; clean up code
+
+2004-06-30  Kingpin  <mthurn@verizon.net>
+
+	* Auth.pm (send): do error-checking on addresses
+
